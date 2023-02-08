@@ -1,14 +1,21 @@
 <script>
-
+import {store} from '../store.js'
 export default {
-    name: 'SearchInput'
+    name: 'SearchInput',
+    data (){
+        return{
+            store
+        }
+    }
 }
 </script>
 
 <template>
     <div>
-        <input type="text">
-        <button type="submit">cerca</button>
+        <form action="">
+            <input type="text" v-model="store.inputNameValue">
+            <button type="submit">cerca</button>
+        </form>
     </div>
 </template>
 
