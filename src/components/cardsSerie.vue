@@ -24,16 +24,19 @@ export default {
             <h5 class="title">titolo:
                 <p class="d-inline-block">{{ serie.name }}</p>
             </h5>
+            
             <h5 class="original-title">titolo originale:
                 <p class="d-inline-block">{{ serie.original_name }}</p>
             </h5>
-            <h5 v-if="serie.original_language == 'en'" class="languages">
+            
+            <h5 v-if="serie.original_language == 'en'" class="languages">lingua:
                 <img src="../assets/Flag_of_the_United_Kingdom_(3-5).svg.png" alt="en">
             </h5>
-            <h5 v-if="serie.original_language == 'it'" class="languages">
+            
+            <h5 v-else-if="serie.original_language == 'it'" class="languages">lingua:
                 <img src="../assets/Flag_of_Italy.svg.png" alt="it">
             </h5>
-            <h5 v-if="serie.original_language == 'fr'" class="languages">
+            <h5 v-else-if="serie.original_language == 'fr'" class="languages">lingua:
                 <img src="../assets/Francia.jpg" alt="fr">
             </h5>
             <h5 v-else class="languages">lingua:
