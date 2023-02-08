@@ -20,6 +20,7 @@ export default {
         <div v-else class="poster">
             <img :src="`https://image.tmdb.org/t/p/w342${film.poster_path}`" :alt="film.title">
         </div>
+        
         <div class="info-film">
             <h5 class="title">titolo:
                 <p class="d-inline-block">{{ film.title }}</p>

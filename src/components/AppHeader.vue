@@ -13,7 +13,7 @@ export default {
         }
     },
     methods: {
-        writingName(){
+        writingTitle(){
             if(this.store.inputNameValue != ''){
                 axios
                     .get('https://api.themoviedb.org/3/search/movie?api_key=9c81a37192d026771ec214401d8ef5f4&query=' + this.store.inputNameValue)
@@ -45,7 +45,7 @@ export default {
             }
     },
     created(){
-        this.writingName()
+        this.writingTitle()
     }
 }
 </script>
@@ -54,7 +54,7 @@ export default {
     <header>
         <div class="container-fluid">
             <h1>BOOLFLIX</h1>
-            <SearchInput @search="writingName" />
+            <SearchInput @search="writingTitle" />
         </div>
     </header>
 </template>
