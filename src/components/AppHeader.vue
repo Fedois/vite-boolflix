@@ -21,6 +21,12 @@ export default {
                         this.store.listFilm = response.data.results
                         console.log(response.data.results)
                     })
+                axios
+                    .get('https://api.themoviedb.org/3/search/tv?api_key=9c81a37192d026771ec214401d8ef5f4&query=' + this.store.inputNameValue)
+                    .then((response) => {
+                        this.store.listSerie = response.data.results
+                        console.log(response.data.results)
+                    })
             }
             else{
                 axios

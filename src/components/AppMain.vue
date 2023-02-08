@@ -12,10 +12,10 @@ export default {
 
 <template>
     <main>
-       <div class="my-container border">
+       <div class="container">
         <h2>FILM</h2>
-            <div class="my-cards-films row">
-                <div class="my-card-film col" v-for="(film, index) in store.listFilm">
+            <div class="my-cards-films row row-cols-4">
+                <div class="my-card-film" v-for="(film, index) in store.listFilm">
                     <div class="poster">
                         <img src="" alt="">
                     </div>
@@ -37,7 +37,7 @@ export default {
             </div>
 
             <h2>SERIE-TV</h2>
-             <div class="my-cards-films row">
+             <div class="my-cards-films row row-cols-4">
                 <div class="my-card-film col" v-for="(serie, index) in store.listSerie">
                     <div class="poster">
                         <img src="" alt="">
@@ -63,14 +63,4 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.my-container{
-    width: 1200px;
-    height: 100%;
-    margin: 0 auto;
-
-    .my-cards-films{
-        width: 100%;
-        scroll-behavior: auto;
-    }
-}
 </style>

@@ -24,4 +24,7 @@ export default {
 
 <style lang="scss">
 @use "./main.scss";
+body{
+    width: 100%;
+}
 </style>
