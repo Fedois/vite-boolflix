@@ -13,11 +13,14 @@ export default {
 <template>
     <div>
         <form action="" @submit.prevent="$emit('search')">
-            <input type="text" v-model="store.inputNameValue">
+            <input type="text" v-model="store.inputNameValue" placeholder='example "back to the future"'>
             <button type="submit">cerca</button>
         </form>
     </div>
 </template>
 
 <style lang="scss" scoped>
+input{
+    width: 300px;
+}
 </style>

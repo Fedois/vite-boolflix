@@ -24,9 +24,11 @@ export default {
             <h5 class="title">titolo:
                 <p class="d-inline-block">{{ film.title }}</p>
             </h5>
+            
             <h5 class="original-title">titolo originale:
                 <p class="d-inline-block">{{ film.original_title }}</p>
             </h5>
+            
             <h5 v-if="film.original_language == 'en'" class="languages">lingua:
                 <img src="../assets/Flag_of_the_United_Kingdom_(3-5).svg.png" alt="en">
             </h5>
@@ -39,6 +41,7 @@ export default {
             <h5 v-else class="languages">lingua:
                 <p class="d-inline-block">{{ film.original_language }}</p>
             </h5>
+            
             <h5 class="vote">voto:
                 <p class="d-inline-block">{{ film.vote_average }}</p>
             </h5>
