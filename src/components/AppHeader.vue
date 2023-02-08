@@ -14,13 +14,23 @@ export default {
     },
     methods: {
         writingName(){
-        axios
-            .get('https://api.themoviedb.org/3/movie/550?api_key=9c81a37192d026771ec214401d8ef5f4')
-            .then((response) => {
-                this.store.listFilm.push(response.data)
-                console.log(response.data)
-            })
-         }
+            if(this.store.inputNameValue != ''){
+                axios
+                    .get('https://api.themoviedb.org/3/search/movie?api_key=9c81a37192d026771ec214401d8ef5f4&query=' + this.store.inputNameValue)
+                    .then((response) => {
+                        this.store.listFilm = response.data.results
+                        console.log(response.data.results)
+                    })
+            }
+            else{
+                axios
+                    .get('https://api.themoviedb.org/3/search/movie?api_key=9c81a37192d026771ec214401d8ef5f4&query=ritorno+al+futuro')
+                    .then((response) => {
+                        this.store.listFilm = response.data.results
+                        console.log(response.data.results)
+                    })
+            }
+            }
     },
     created(){
         this.writingName()
@@ -30,9 +40,11 @@ export default {
 
 <template>
     <header>
-        BOOLFLIX
-        <h1>{{ store.inputNameValue }}</h1>
-        <SearchInput @search="writingName" />
+        <div class="container-fluid">
+            <h1>BOOLFLIX</h1>
+            <!-- <h1>{{ store.inputNameValue }}</h1> -->
+            <SearchInput @search="writingName" />
+        </div>
     </header>
 </template>
 
