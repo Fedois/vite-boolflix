@@ -11,6 +11,19 @@ export default {
         return{
             store
         }
+    },
+    methods: {
+        writingName(){
+        axios
+            .get('https://api.themoviedb.org/3/movie/550?api_key=9c81a37192d026771ec214401d8ef5f4')
+            .then((response) => {
+                this.store.listFilm.push(response.data)
+                console.log(response.data)
+            })
+         }
+    },
+    created(){
+        this.writingName()
     }
 }
 </script>
@@ -19,7 +32,7 @@ export default {
     <header>
         BOOLFLIX
         <h1>{{ store.inputNameValue }}</h1>
-        <SearchInput />
+        <SearchInput @search="writingName" />
     </header>
 </template>
 

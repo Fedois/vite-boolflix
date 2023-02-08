@@ -12,7 +12,7 @@ export default {
 
 <template>
     <div>
-        <form action="">
+        <form action="" @submit.prevent="$emit('search')">
             <input type="text" v-model="store.inputNameValue">
             <button type="submit">cerca</button>
         </form>
