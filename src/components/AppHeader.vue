@@ -54,7 +54,6 @@ export default {
     <header>
         <div class="container-fluid">
             <h1>BOOLFLIX</h1>
-            <!-- <h1>{{ store.inputNameValue }}</h1> -->
             <SearchInput @search="writingName" />
         </div>
     </header>
