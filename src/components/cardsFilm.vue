@@ -30,17 +30,8 @@ export default {
                 <p class="d-inline-block">{{ film.original_title }}</p>
             </h5>
             
-            <h5 v-if="film.original_language == 'en'" class="languages">lingua:
-                <img src="../assets/Flag_en.svg.png" :alt="film.original_language">
-            </h5>
-            <h5 v-else-if="film.original_language == 'it'" class="languages">lingua:
-                <img src="../assets/Flag_it.svg.png" :alt="film.original_language">
-            </h5>
-            <h5 v-else-if="film.original_language == 'fr'" class="languages">lingua:
-                <img src="../assets/Flag_fr.svg.jpg" :alt="film.original_language">
-            </h5>
-            <h5 v-else class="languages">lingua:
-                <p class="d-inline-block">{{ film.original_language }}</p>
+            <h5 class="languages">lingua:
+                <img :src="`/src/assets/Flag_${film.original_language}.svg.png`" :alt="film.original_language">
             </h5>
             
             <h5 class="vote">voto:

@@ -30,18 +30,8 @@ export default {
                 <p class="d-inline-block">{{ serie.original_name }}</p>
             </h5>
             
-            <h5 v-if="serie.original_language == 'en'" class="languages">lingua:
-                <img src="../assets/Flag_en.svg.png" :alt="serie.original_language">
-            </h5>
-            
-            <h5 v-else-if="serie.original_language == 'it'" class="languages">lingua:
-                <img src="../assets/Flag_it.svg.png" :alt="serie.original_language">
-            </h5>
-            <h5 v-else-if="serie.original_language == 'fr'" class="languages">lingua:
-                <img src="../assets/Flag_fr.svg.jpg" :alt="serie.original_language">
-            </h5>
-            <h5 v-else class="languages">lingua:
-                <p class="d-inline-block">{{ serie.original_language }}</p>
+            <h5 class="languages">lingua:
+                <img :src="`/src/assets/Flag_${serie.original_language}.svg.png`" :alt="serie.original_language">
             </h5>
 
             <h5 class="vote">voto:
