@@ -21,7 +21,7 @@ export default {
             <img class="d-block w-100 h-100" :src="`https://image.tmdb.org/t/p/w342${film.poster_path}`" :alt="film.title">
         </div>
         
-        <div class="info p-2 h-100 w-100 position-absolute top-0 start-0 d-none">
+        <div class="info-card p-2 h-100 w-100 position-absolute top-0 start-0 d-none">
             <h5 class="title mb-0">Titolo:</h5>
             <p class="d-inline-block">{{ film.title }}</p>
             
@@ -44,6 +44,7 @@ export default {
             </h5>
         </div>
     </div>
+
 </template>
 
 <style lang="scss" scoped>

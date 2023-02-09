@@ -44,4 +44,12 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+main{
+    height: calc(100vh - 80px);
+    overflow: auto;
+
+    .container{
+        height: 100%;
+    }
+}
 </style>

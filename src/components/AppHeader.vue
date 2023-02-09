@@ -51,8 +51,8 @@ export default {
 </script>
 
 <template>
-    <header class="p-3">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
+    <header class="sticky-top">
+        <div class="container-fluid d-flex justify-content-between align-items-center h-100">
             <h1>BOOLFLIX</h1>
             <SearchInput @search="writingTitle" />
         </div>
@@ -63,5 +63,6 @@ export default {
 header{
     background-color: black;
     color: red;
+    height: 80px;
 }
 </style>
