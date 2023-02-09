@@ -13,7 +13,7 @@ export default {
 <template>
     <!-- SERIE-TV -->
 
-    <div class="my-card-film col" v-for="(serie, index) in store.listSerie">
+    <div class="my-card-serie col" v-for="(serie, index) in store.listSerie">
         <div v-if="serie.poster_path == null" class="poster">
             <img src="../assets/image-not-found.jpg" alt="">
         </div>
@@ -21,7 +21,7 @@ export default {
             <img :src="`https://image.tmdb.org/t/p/w342${serie.poster_path}`" :alt="serie.title">
         </div>
         
-        <div class="info-film">
+        <div class="info-serie">
             <h5 class="title">titolo:
                 <p class="d-inline-block">{{ serie.name }}</p>
             </h5>
@@ -46,13 +46,22 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.poster > img{
+
+.my-card-serie{
+    border: 1px solid white;
+
+    .poster > img{
     width: 100%;
-}
-.languages > img{
-    width: 20px;
-}
-.yel{
-    color: yellow;
+    }
+    .info-serie{
+        background-color: rgba($color: #000000, $alpha: 0.8);
+
+        .languages > img{
+        width: 20px;
+        }
+        .yel{
+            color: yellow;
+        }
+    }
 }
 </style>

@@ -60,8 +60,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-// header{
-//     background-color: black;
-//     color: red;
-// }
+header{
+    background-color: black;
+    color: red;
+}
 </style>
