@@ -35,7 +35,11 @@ export default {
             </h5>
 
             <h5 class="vote">voto:
-                <p class="d-inline-block">{{ serie.vote_average }}</p>
+                <span :class="{'yel' : serie.vote_average >= 0}">&#9733;</span>
+                <span :class="{'yel' : serie.vote_average > 1}">&#9733;</span>
+                <span :class="{'yel' : serie.vote_average > 2}">&#9733;</span>
+                <span :class="{'yel' : serie.vote_average > 3}">&#9733;</span>
+                <span :class="{'yel' : serie.vote_average > 4}">&#9733;</span>
             </h5>
         </div>
     </div>
@@ -47,5 +51,8 @@ export default {
 }
 .languages > img{
     width: 20px;
+}
+.yel{
+    color: yellow;
 }
 </style>
