@@ -27,13 +27,9 @@ cursor: pointer;
     width: 5px;
   }
   ::-webkit-scrollbar-thumb {
-    background: #e1e1e1;
-    border: 20px none #ffffff;
+    background: gray;
     border-radius: 50px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: red;
-  }
-  ::-webkit-scrollbar-thumb:active {
-    background: #e1e1e1;
+    background: white;
   }

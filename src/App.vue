@@ -26,6 +26,6 @@ export default {
 @use "./main.scss";
 body{
     background-color: rgb(30, 30, 30);
-    color: white
+    color: white;
 }
 </style>
