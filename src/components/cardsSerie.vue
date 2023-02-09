@@ -22,13 +22,14 @@ export default {
         </div>
         
         <div class="info-serie p-2 h-100 w-100 position-absolute top-0 start-0 d-none">
-            <h5 class="title">titolo:
-                <p class="d-inline-block">{{ serie.title }}</p>
-            </h5>
+            <h5 class="title mb-0">titolo:</h5>
+            <p class="d-inline-block">{{ serie.name }}</p>
             
-            <h5 class="original-title">titolo originale:
-                <p class="d-inline-block">{{ serie.original_title }}</p>
-            </h5>
+            <h5 class="original-title mb-0">titolo originale:</h5>
+            <p class="d-inline-block">{{ serie.original_name }}</p>
+
+            <h5 class="overview mb-0">descrizione:</h5>
+            <p>{{ serie.overview }}</p>
             
             <h5 class="languages">lingua:
                 <img :src="`/src/assets/Flag_${serie.original_language}.svg.png`" :alt="serie.original_language">
@@ -51,6 +52,7 @@ export default {
     }
     .info-serie{
         background-color: rgba($color: #000000, $alpha: 0.8);
+        overflow: auto;
 
         .languages > img{
             width: 20px;

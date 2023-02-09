@@ -22,7 +22,7 @@ export default {
        <div class="container">
         <!-- sezione film -->
             <h2 id="films" class="pt-5">FILM</h2>
-            <div class="my-cards-films p-3 row row-cols-4" v-if="store.listFilm.length > 0">
+            <div class="my-cards-films p-3 row row-cols-1 row row-cols-sm-2 row row-cols-md-3 row row-cols-lg-4 row-cols-xl-5" v-if="store.listFilm.length > 0">
                 <cardsFilm />
             </div>
             
@@ -32,7 +32,7 @@ export default {
 
         <!-- sezione serie -->
             <h2 id="serie-tv" class="pt-5">SERIE-TV</h2>
-            <div class="my-cards-series p-3 row row-cols-4" v-if="store.listSerie.length > 0">
+            <div class="my-cards-series p-3 row row-cols-1 row row-cols-sm-2 row row-cols-md-3 row row-cols-lg-4 row-cols-xl-5" v-if="store.listSerie.length > 0">
                 <cardsSerie />
             </div>
             

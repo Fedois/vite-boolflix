@@ -22,13 +22,14 @@ export default {
         </div>
         
         <div class="info-film p-2 h-100 w-100 position-absolute top-0 start-0 d-none">
-            <h5 class="title">titolo:
-                <p class="d-inline-block">{{ film.title }}</p>
-            </h5>
+            <h5 class="title mb-0">titolo:</h5>
+            <p class="d-inline-block">{{ film.title }}</p>
             
-            <h5 class="original-title">titolo originale:
-                <p class="d-inline-block">{{ film.original_title }}</p>
-            </h5>
+            <h5 class="original-title mb-0">titolo originale:</h5>
+            <p class="d-inline-block">{{ film.original_title }}</p>
+
+            <h5 class="overview mb-0">descrizione:</h5>
+            <p>{{ film.overview }}</p>
             
             <h5 class="languages">lingua:
                 <img :src="`/src/assets/Flag_${film.original_language}.svg.png`" :alt="film.original_language">
@@ -51,7 +52,7 @@ export default {
     }
     .info-film{
         background-color: rgba($color: #000000, $alpha: 0.8);
-
+        overflow: auto;
         .languages > img{
             width: 20px;
             }
@@ -65,5 +66,19 @@ export default {
     & .info-film{
         display: block !important;
     }
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #e1e1e1;
+  border: 20px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: blue;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #e1e1e1;
 }
 </style>

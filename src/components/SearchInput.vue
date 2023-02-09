@@ -13,8 +13,8 @@ export default {
 <template>
     <div>
         <form action="" @submit.prevent="$emit('search')">
-            <input type="text" v-model="store.inputNameValue" placeholder='example "back to the future"'>
-            <button type="submit">cerca</button>
+            <input class="p-1" type="text" v-model="store.inputNameValue" placeholder='example "back to the future"'>
+            <button class="p-1" type="submit">Search</button>
         </form>
     </div>
 </template>
