@@ -36,11 +36,11 @@ export default {
                         console.log(response.data.results)
                     })
                 axios
-                .get('https://api.themoviedb.org/3/search/tv?api_key=9c81a37192d026771ec214401d8ef5f4&query=ritorno+al+futuro')
-                .then((response) => {
-                    this.store.listSerie = response.data.results
-                    console.log(response.data.results)
-                })
+                    .get('https://api.themoviedb.org/3/search/tv?api_key=9c81a37192d026771ec214401d8ef5f4&query=ritorno+al+futuro')
+                    .then((response) => {
+                        this.store.listSerie = response.data.results
+                        console.log(response.data.results)
+                    })
             }
             }
     },
@@ -51,8 +51,8 @@ export default {
 </script>
 
 <template>
-    <header>
-        <div class="container-fluid">
+    <header class="p-3">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
             <h1>BOOLFLIX</h1>
             <SearchInput @search="writingTitle" />
         </div>
@@ -60,4 +60,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+// header{
+//     background-color: black;
+//     color: red;
+// }
 </style>
