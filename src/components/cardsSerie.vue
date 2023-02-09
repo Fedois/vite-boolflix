@@ -13,7 +13,7 @@ export default {
 <template>
     <!-- SERIE -->
 
-    <div class="my-card-serie mb-4 p-2 position-relative" v-for="(serie, index) in store.listSerie">
+    <div class="my-card mb-4 p-2 position-relative" v-for="(serie, index) in store.listSerie">
         <div v-if="serie.poster_path == null" class="poster h-100">
             <img class="d-block w-100 h-100" src="../assets/image-not-found.jpg" :alt="serie.title">
         </div>
@@ -21,7 +21,7 @@ export default {
             <img class="d-block w-100 h-100" :src="`https://image.tmdb.org/t/p/w342${serie.poster_path}`" :alt="serie.title">
         </div>
         
-        <div class="info-serie p-2 h-100 w-100 position-absolute top-0 start-0 d-none">
+        <div class="info p-2 h-100 w-100 position-absolute top-0 start-0 d-none">
             <h5 class="title mb-0">titolo:</h5>
             <p class="d-inline-block">{{ serie.name }}</p>
             
@@ -44,28 +44,9 @@ export default {
             </h5>
         </div>
     </div>
+
 </template>
 
 <style lang="scss" scoped>
-    .poster > img{
-        object-fit: cover;
-    }
-    .info-serie{
-        background-color: rgba($color: #000000, $alpha: 0.8);
-        overflow: auto;
-
-        .languages > img{
-            width: 20px;
-            }
-        .yel{
-            color: yellow;
-        }
-    }
-.my-card-serie:hover{
-    cursor: pointer;
-
-    & .info-serie{
-        display: block !important;
-    }
-}
+@use '../partials/styleAllCards.scss' as *
 </style>

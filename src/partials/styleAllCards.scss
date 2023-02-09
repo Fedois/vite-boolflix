@@ -1,0 +1,21 @@
+.poster > img{
+    object-fit: cover;
+}
+.info{
+    background-color: rgba($color: #000000, $alpha: 0.8);
+    overflow: auto;
+
+    .languages > img{
+        width: 20px;
+        }
+    .yel{
+        color: yellow;
+    }
+}
+.my-card:hover{
+cursor: pointer;
+
+& .info{
+    display: block !important;
+}
+}
