@@ -13,15 +13,15 @@ export default {
 <template>
     <!-- FILM -->
 
-    <div class="my-card-film position-relative" v-for="(film, index) in store.listFilm">
-        <div v-if="film.poster_path == null" class="poster">
-            <img src="../assets/image-not-found.jpg" alt="">
+    <div class="my-card-film mb-4 p-2 position-relative" v-for="(film, index) in store.listFilm">
+        <div v-if="film.poster_path == null" class="poster h-100">
+            <img class="d-block w-100 h-100" src="../assets/image-not-found.jpg" :alt="film.title">
         </div>
-        <div v-else class="poster">
-            <img :src="`https://image.tmdb.org/t/p/w342${film.poster_path}`" :alt="film.title">
+        <div v-else class="poster h-100">
+            <img class="d-block w-100 h-100" :src="`https://image.tmdb.org/t/p/w342${film.poster_path}`" :alt="film.title">
         </div>
         
-        <div class="info-film position-absolute bottom-0 start-0 d-none">
+        <div class="info-film p-2 h-100 w-100 position-absolute top-0 start-0 d-none">
             <h5 class="title">titolo:
                 <p class="d-inline-block">{{ film.title }}</p>
             </h5>
@@ -46,24 +46,19 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.my-card-film{
-    border: 1px solid white;
-
     .poster > img{
-    width: 100%;
+        object-fit: cover;
     }
     .info-film{
         background-color: rgba($color: #000000, $alpha: 0.8);
-        height: 100%;
 
         .languages > img{
-        width: 20px;
-        }
+            width: 20px;
+            }
         .yel{
             color: yellow;
         }
     }
-}
 .my-card-film:hover{
     cursor: pointer;
 
