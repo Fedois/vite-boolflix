@@ -2,9 +2,21 @@
 import {store} from '../store.js'
 export default {
     name: 'cardsFilm',
+    props: {
+        type: Object
+    },
     data (){
         return{
             store
+        }
+    },
+    methods: {
+        starsVote(vote){
+            let numVote = vote;
+            numVote = numVote / 2
+            numVote = Math.ceil(numVote)
+            console.log(numVote)
+            return numVote
         }
     }
 }
@@ -37,11 +49,8 @@ export default {
                 </h5>
                 
                 <h5 class="vote">Voto:
-                    <span :class="{'yel' : film.vote_average >= 0}">&#9733;</span>
-                    <span :class="{'yel' : film.vote_average > 1}">&#9733;</span>
-                    <span :class="{'yel' : film.vote_average > 2}">&#9733;</span>
-                    <span :class="{'yel' : film.vote_average > 3}">&#9733;</span>
-                    <span :class="{'yel' : film.vote_average > 4}">&#9733;</span>
+                    <span class="yel" v-for="star in starsVote(film.vote_average)">&#9733;</span>
+                    <span v-for="star in 5- starsVote(film.vote_average)">&#9734;</span>
                 </h5>
             </div>
         </div>

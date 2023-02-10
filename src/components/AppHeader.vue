@@ -33,7 +33,7 @@ export default {
                             this.store.listSerie = response.data.results
                         }
                        
-                        // console.log(response.data.results)
+                        console.log(response.data.results)
                         this.store.loading = false
 
                     })
