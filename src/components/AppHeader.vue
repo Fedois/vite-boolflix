@@ -13,29 +13,34 @@ export default {
         }
     },
     methods: {
-        writingTitle(){
+        writingTitle(element){
             this.store.loading = true
 
             if(this.store.inputNameValue != ''){
                 axios
-                    .get('https://api.themoviedb.org/3/search/movie?api_key=9c81a37192d026771ec214401d8ef5f4&query=' + this.store.inputNameValue)
+                    .get('https://api.themoviedb.org/3/search/' + element, {
+                        params: {
+                            api_key: '9c81a37192d026771ec214401d8ef5f4',
+                            query: this.store.inputNameValue,
+                            language: 'it-IT'
+                        }
+                    })
                     .then((response) => {
-                        this.store.listFilm = response.data.results
+                        if(element == 'movie'){
+                             this.store.listFilm = response.data.results
+                        }
+                        else if(element == 'tv'){
+                            this.store.listSerie = response.data.results
+                        }
+                       
                         // console.log(response.data.results)
                         this.store.loading = false
 
                     })
-                axios
-                    .get('https://api.themoviedb.org/3/search/tv?api_key=9c81a37192d026771ec214401d8ef5f4&query=' + this.store.inputNameValue)
-                    .then((response) => {
-                        this.store.listSerie = response.data.results
-                        // console.log(response.data.results)
-                        this.store.loading = false
-                    })
             }
             else{
                 axios
-                    .get('https://api.themoviedb.org/3/search/movie?api_key=9c81a37192d026771ec214401d8ef5f4&query=ritorno+al+futuro')
+                    .get(`https://api.themoviedb.org/3/search/movie?api_key=9c81a37192d026771ec214401d8ef5f4&query=ritorno+al+futuro`)
                     .then((response) => {
                         this.store.listFilm = response.data.results
                         // console.log(response.data.results)
@@ -47,7 +52,11 @@ export default {
                         // console.log(response.data.results)
                     })
             }
-            }
+        },
+        getCards(){
+            this.writingTitle('movie')
+            this.writingTitle('tv')
+        }
     },
     created(){
         this.writingTitle()
@@ -73,7 +82,7 @@ export default {
                 </nav>
             </div>
             
-            <SearchInput @search="writingTitle" />
+            <SearchInput @search="getCards()" />
         </div>
     </header>
 </template>
@@ -88,7 +97,7 @@ header{
         list-style: none;
 
         li:hover{
-            border-bottom: 1px solid red;
+            border-bottom: 3px solid red;
         }
     }
 }

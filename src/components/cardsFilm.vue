@@ -14,7 +14,7 @@ export default {
     <!-- FILM -->
 
     <div class="my-card mb-4 p-2" v-for="(film, index) in store.listFilm">
-        <div class="my-box position-relative">
+        <div class="my-box h-100 w-100 position-relative">
             <div v-if="film.poster_path == null" class="poster h-100">
                 <img class="d-block w-100 h-100" src="../assets/image-not-found.jpg" :alt="film.title">
             </div>

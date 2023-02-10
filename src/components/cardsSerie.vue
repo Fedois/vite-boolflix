@@ -14,11 +14,11 @@ export default {
     <!-- SERIE -->
 
     <div class="my-card mb-4 p-2" v-for="(serie, index) in store.listSerie">
-        <div class="my-box position-relative">
+        <div class="my-box position-relative h-100 w-100">
             <div v-if="serie.poster_path == null" class="poster h-100">
                 <img class="d-block w-100 h-100" src="../assets/image-not-found.jpg" :alt="serie.title">
             </div>
-            <div v-else class="poster h-100">
+            <div v-else class="poster h-100 w-100">
                 <img class="d-block w-100 h-100" :src="`https://image.tmdb.org/t/p/w342${serie.poster_path}`" :alt="serie.title">
             </div>
             
