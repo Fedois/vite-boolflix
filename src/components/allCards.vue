@@ -28,8 +28,7 @@ export default {
 
 <template>
     <!-- FILM -->
-
-    <div class="my-card mb-4 p-2">
+    <div class="my-card mb-4 p-2 position-relative">
         <div class="my-box h-100 w-100 position-relative">
             <div v-if="type.poster_path == null" class="poster h-100">
                 <img class="d-block w-100 h-100" src="../assets/image-not-found.jpg" :alt="type.title">

@@ -20,16 +20,3 @@ cursor: pointer;
         display: block !important;
     }
 }
-
-// scrollbar
-
-::-webkit-scrollbar {
-    width: 5px;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: gray;
-    border-radius: 50px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: white;
-  }

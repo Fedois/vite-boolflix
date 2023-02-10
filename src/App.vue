@@ -28,4 +28,14 @@ body{
     background-color: rgb(30, 30, 30);
     color: white;
 }
+::-webkit-scrollbar {
+    width: 5px;
+  }
+::-webkit-scrollbar-thumb {
+background: gray;
+border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+background: white;
+}
 </style>

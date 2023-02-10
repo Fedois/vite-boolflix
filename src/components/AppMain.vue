@@ -19,7 +19,11 @@ export default {
     <main>
        <div class="container">
         <!-- sezione film -->
-            <h2 id="films" class="pt-5">FILM</h2>
+            <h2 id="films" class="pt-5 pe-5 d-inline-block">FILM</h2>
+            
+            <div v-if="store.loading" class="spinner-border text-secondary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
             
             <div class="my-cards-films p-3 row row-cols-1 row row-cols-sm-2 row row-cols-md-3 row row-cols-lg-4 row-cols-xl-5" v-if="store.listFilm.length > 0">
                 <allCards v-for="film in store.listFilm"
@@ -31,7 +35,12 @@ export default {
             </div>
 
         <!-- sezione serie -->
-            <h2 id="serie-tv" class="pt-5">SERIE-TV</h2>
+            <h2 id="serie-tv" class="pt-5 pe-5 d-inline-block">SERIE-TV</h2>
+            
+            <div v-if="store.loading" class="spinner-border text-secondary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+
             <div class="my-cards-series p-3 row row-cols-1 row row-cols-sm-2 row row-cols-md-3 row row-cols-lg-4 row-cols-xl-5" v-if="store.listSerie.length > 0">
                 <allCards v-for="serie in store.listSerie"
                 :type="serie" />
@@ -53,15 +62,5 @@ main{
     .container{
         height: 100%;
     }
-}
-::-webkit-scrollbar {
-    width: 5px;
-  }
-::-webkit-scrollbar-thumb {
-background: gray;
-border-radius: 50px;
-}
-::-webkit-scrollbar-thumb:hover {
-background: white;
 }
 </style>
