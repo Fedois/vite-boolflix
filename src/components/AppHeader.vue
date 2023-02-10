@@ -32,7 +32,7 @@ export default {
                         else if(element == 'tv'){
                             this.store.listSerie = response.data.results
                         }
-                       console.log(response.data.results)
+                       console.log(element, response.data.results)
                         
                        this.store.loading = false
 
