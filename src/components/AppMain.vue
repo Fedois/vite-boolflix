@@ -1,13 +1,11 @@
 <script>
 import {store} from '../store.js'
-import cardsFilm from './cardsFilm.vue'
-import cardsSerie from './cardsSerie.vue'
+import allCards from './allCards.vue'
 
 export default {
     name: 'AppMain',
     components: {
-        cardsFilm,
-        cardsSerie
+        allCards,
     },
     data (){
         return{
@@ -24,7 +22,8 @@ export default {
             <h2 id="films" class="pt-5">FILM</h2>
             
             <div class="my-cards-films p-3 row row-cols-1 row row-cols-sm-2 row row-cols-md-3 row row-cols-lg-4 row-cols-xl-5" v-if="store.listFilm.length > 0">
-                <cardsFilm />
+                <allCards v-for="film in store.listFilm"
+                :type="film" />
             </div>
             
             <div v-else class="p-3">
@@ -34,7 +33,8 @@ export default {
         <!-- sezione serie -->
             <h2 id="serie-tv" class="pt-5">SERIE-TV</h2>
             <div class="my-cards-series p-3 row row-cols-1 row row-cols-sm-2 row row-cols-md-3 row row-cols-lg-4 row-cols-xl-5" v-if="store.listSerie.length > 0">
-                <cardsSerie />
+                <allCards v-for="serie in store.listSerie"
+                :type="serie" />
             </div>
             
             <div v-else class="p-3">
