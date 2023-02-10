@@ -3,7 +3,7 @@ import {store} from '../store.js'
 export default {
     name: 'cardstype',
     props: {
-        type: Object
+        type: Object,
     },
     data (){
         return{
@@ -39,10 +39,10 @@ export default {
             
             <div class="info-card p-2 h-100 w-100 position-absolute top-0 start-0 d-none">
                 <h5 class="title mb-0">Titolo:</h5>
-                <p class="d-inline-block">{{ type.title }}</p>
+                <p class="d-inline-block">{{ type.title || type.name }}</p>
                 
                 <h5 class="original-title mb-0">Titolo originale:</h5>
-                <p class="d-inline-block">{{ type.original_title }}</p>
+                <p class="d-inline-block">{{ type.original_title || type.original_name }}</p>
 
                 <h5 class="overview mb-0">Descrizione:</h5>
                 <p>{{ type.overview }}</p>
@@ -52,7 +52,7 @@ export default {
                 </h5>
                 
                 <h5 class="vote">Voto:
-                    <span class="yel" v-for="star in starsVote(type.vote_average)">&#9733;</span>
+                    <span class="yellow-star" v-for="star in starsVote(type.vote_average)">&#9733;</span>
                     <span v-for="star in 5 - starsVote(type.vote_average)">&#9734;</span>
                 </h5>
             </div>
