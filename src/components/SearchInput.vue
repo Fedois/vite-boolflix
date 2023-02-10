@@ -13,7 +13,7 @@ export default {
 <template>
     <div>
         <form action="" @submit.prevent="$emit('search')">
-            <input class="p-1" type="text" v-model="store.inputNameValue" placeholder='example "back to the future"'>
+            <input class="p-1" type="text" v-model="store.inputNameValue" placeholder='cerca esempio "ritorno al futuro"'>
             <button class="p-1" type="submit">Search</button>
         </form>
     </div>
